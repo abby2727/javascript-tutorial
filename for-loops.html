@@ -14,36 +14,40 @@
             var fruits = ['mango', 'papaya', 'pineapple', 'apple'];
             // console.log(fruits);
 
-            // foreach
-            fruits.forEach(function (value, index) {
+            // foreach loop
+            // fruits.forEach(function (value, index) {
                 // value * 2;
-                console.log(value);
+                // console.log(value);
                 // console.log(index);
-            });
+            // });
 
             // normal loop
             // for (var i = 0; i < fruits.length; i++) {
             //     console.log(fruits[i]);
             // }
 
-            // jQuery each for loop
+            // jQuery each loop
             // $.each(fruits, function(index, value) {
             //     console.log(value);
             // });
 
             // for-in loop
-            // console.log('for-in loops');
             // for (var x in fruits) {
             //     var oFruits = fruits[x];
             //     console.log(oFruits);
             // }
+
+            // for-of loop
+            for (const element of fruits) {
+                console.log(element);
+            }
 
         });
     </script>
 </head>
 
 <body>
-    <h1>For each loop</h1>
+    <h1>JavaScript Looping</h1>
 </body>
 
 </html>
