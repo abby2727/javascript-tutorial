@@ -2,12 +2,13 @@
 <html>
 
 <body>
-    <p id="demo"></p>
+    <p id="time"></p>
 
     <script>
-        const d = new Date();
-        document.getElementById("demo").innerHTML = d;
-        console.log(d);
+        setInterval(function () {
+            var time = document.getElementById("time");
+            time.innerHTML = new Date();
+        }, 1000);
     </script>
 </body>
 
