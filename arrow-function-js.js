@@ -15,3 +15,5 @@ function add(a, b) {
 const add2 = (a, b) => a + b;
 
 console.log(add2(50, 10));
+
+console.log(add(2, 2));

@@ -1,8 +1,4 @@
-const cars = ["BMW", "Volvo", "Saab", "Ford"];
-let i = 0;
+// let hi-me = 15;
+let hi = 15;
 
-for (; cars[i];) {
-    // text += cars[i];
-    console.log(cars[i]);
-    i++;
-}
+console.log(hi);
