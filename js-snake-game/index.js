@@ -30,6 +30,7 @@ function drawGame() {
     clearScreen();
     drawSnake();
     changeSnakePosition();
+    checkCollision();
     drawApple();
 }
 
@@ -41,6 +42,14 @@ function drawSnake() {
 function drawApple() {
     ctx.fillStyle = "red"; // color of apple
     ctx.fillRect(appleX * tileCount, appleY * tileCount, tileSize, tileSize) //position apple within tile count
+}
+
+function checkCollision() {
+    if (appleX == headX && appleY == headY) {
+        // console.log("apple collision detected");
+        appleX = Math.floor(Math.random() * tileCount);
+        appleY = Math.floor(Math.random() * tileCount);
+    }
 }
 
 function clearScreen() {
