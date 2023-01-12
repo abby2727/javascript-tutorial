@@ -2,7 +2,9 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 
 const snakeParts = [];
-let tailLength = 2; //initial parts of snake
+let tailLength = 2; // initial parts of snake
+
+let score = 0;
 
 let tileCount = 20;
 let tileSize = 18;
@@ -33,15 +35,15 @@ function changeSnakePosition() {
 // }
 
 function drawGame() {
-    let speed = 7; //The interval will be seven times a second.
-
-    setTimeout(drawGame, 1000 / speed); //update screen 7 times a second
+    let speed = 7; // The interval will be seven times a second.
 
     clearScreen();
     drawSnake();
     changeSnakePosition();
     checkCollision();
     drawApple();
+    drawScore();
+    setTimeout(drawGame, 1000 / speed); // update screen 7 times a second
 }
 
 function drawSnake() {
@@ -57,20 +59,29 @@ function drawSnake() {
         let part = snakeParts[i];
         ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
     }
-    snakeParts.push(new snakePart(headX, headY)); //put item at the end of list next to the head
+    snakeParts.push(new snakePart(headX, headY)); // put item at the end of list next to the head
 }
 
 function drawApple() {
     ctx.fillStyle = "red"; // color of apple
-    ctx.fillRect(appleX * tileCount, appleY * tileCount, tileSize, tileSize) //position apple within tile count
+    ctx.fillRect(appleX * tileCount, appleY * tileCount, tileSize, tileSize) // position apple within tile count
 }
 
+function drawScore() {
+    ctx.fillStyle = "white"; // set our text color to white
+    ctx.font = "10px verdena"; // set font size to 10px of font family verdena
+    ctx.fillText("Score: " + score, canvas.clientWidth - 50, 10); // position our score at right hand corner
+}
+
+
 function checkCollision() {
-    //collision happens when left, right ,top, and bottom sides of apple is in contact with any part of the snake
+    // collision happens when left, right ,top, and bottom sides of apple is in contact with any part of the snake
     if (appleX == headX && appleY == headY) {
-        appleX = Math.floor(Math.random() * tileCount); //generate apple to a random horizontal position
-        appleY = Math.floor(Math.random() * tileCount); //generate apple to a random vertical position
-        tailLength++;
+        appleX = Math.floor(Math.random() * tileCount); // generate apple to a random horizontal position
+        appleY = Math.floor(Math.random() * tileCount); // generate apple to a random vertical position
+        
+        tailLength++; // increase tail length
+        score++; // increase score value
     }
 }
 
@@ -82,36 +93,36 @@ function clearScreen() {
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(event) {
-    //up
+    // Move up
     if (event.keyCode == 38) {
         if (yVelocity == 1)
-            return; //prevent snake from moving in opposite direction
-        yVelocity = -1; //move one tile up
+            return; // prevent snake from moving in opposite direction
+        yVelocity = -1; // move one tile up
         xVelocity = 0;
     }
 
-    //down
+    // Move down
     if (event.keyCode == 40) {
         if (yVelocity == -1)
-            return; //prevent snake from moving in opposite direction
-        yVelocity = 1; //move one tile down
+            return; // prevent snake from moving in opposite direction
+        yVelocity = 1; // move one tile down
         xVelocity = 0;
     }
 
-    //left
+    // Move left
     if (event.keyCode == 37) {
         if (xVelocity == 1)
-            return; //prevent snake from moving in opposite direction
+            return; // prevent snake from moving in opposite direction
         yVelocity = 0;
-        xVelocity = -1; //move one tile left
+        xVelocity = -1; // move one tile left
     }
 
-    //right
+    // Move right
     if (event.keyCode == 39) {
         if (xVelocity == -1)
-            return; //prevent snake from moving in opposite direcction
+            return; // prevent snake from moving in opposite direcction
         yVelocity = 0;
-        xVelocity = 1; //move one tile right
+        xVelocity = 1; // move one tile right
     }
 }
 
