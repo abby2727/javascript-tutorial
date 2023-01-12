@@ -9,14 +9,18 @@ let headY = 10;
 let xVelocity = 0;
 let yVelocity = 0;
 
+// Snake Food
+let appleX = 15;
+let appleY = 5;
+
 function changeSnakePosition() {
     headX = headX + xVelocity;
     headY = headY + yVelocity;
 }
 
-function updateGame() {
+// function updateGame() {
 
-}
+// }
 
 function drawGame() {
     let speed = 7; //The interval will be seven times a second.
@@ -26,11 +30,17 @@ function drawGame() {
     clearScreen();
     drawSnake();
     changeSnakePosition();
+    drawApple();
 }
 
 function drawSnake() {
     ctx.fillStyle = "orange";
     ctx.fillRect(headX * tileCount, headY * tileCount, tileSize, tileSize);
+}
+
+function drawApple() {
+    ctx.fillStyle = "red"; // color of apple
+    ctx.fillRect(appleX * tileCount, appleY * tileCount, tileSize, tileSize) //position apple within tile count
 }
 
 function clearScreen() {
@@ -52,25 +62,25 @@ function keyDown(event) {
     //down
     if (event.keyCode == 40) {
         if (yVelocity == -1)
-            return;//prevent snake from moving in opposite direction
-        yVelocity = 1;//move one tile down
+            return; //prevent snake from moving in opposite direction
+        yVelocity = 1; //move one tile down
         xVelocity = 0;
     }
 
     //left
     if (event.keyCode == 37) {
         if (xVelocity == 1)
-            return;//prevent snake from moving in opposite direction
+            return; //prevent snake from moving in opposite direction
         yVelocity = 0;
-        xVelocity = -1;//move one tile left
+        xVelocity = -1; //move one tile left
     }
 
     //right
     if (event.keyCode == 39) {
         if (xVelocity == -1)
-            return;//prevent snake from moving in opposite direcction
+            return; //prevent snake from moving in opposite direcction
         yVelocity = 0;
-        xVelocity = 1;//move one tile right
+        xVelocity = 1; //move one tile right
     }
 }
 
