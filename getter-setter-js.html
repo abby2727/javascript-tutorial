@@ -15,20 +15,20 @@
             firstName: "John",
             lastName: "Doe",
             language: "en",
-            /*
+            
             lang: function() {
-                return this.language
-            } */
-
-            get lang() {
-                return this.language;
+                return this.language.toUpperCase();
             }
+
+            // get lang() {
+            //     return this.language.toUpperCase();
+            // }
         };
 
         // Display data from the object using a getter:
-        document.getElementById("demo").innerHTML = person.lang;
+        // document.getElementById("demo").innerHTML = person.lang;
 
-//document.getElementById("demo").innerHTML = person.lang();
+        document.getElementById("demo").innerHTML = person.lang();
     </script>
 
 </body>
