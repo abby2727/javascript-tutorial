@@ -1,9 +1,9 @@
-try {
-    const person = '{"firstName":"John", "lastName":"Doe", "age":46}';
-    // const obj = typeof JSON.parse(person);
-    const obj = JSON.parse(person);
-
-    console.log(obj.firstName);
-} catch (error) {
-    console.log(error);
+function looping() {
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j < i; j++) {
+            console.log('j: ' + j);
+        }
+    }
 }
+
+looping();
