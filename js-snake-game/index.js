@@ -37,12 +37,21 @@ function changeSnakePosition() {
 function drawGame() {
     let speed = 7; // The interval will be seven times a second.
 
+    // game over logic
+    let result = isGameOver();
+    
+    // if result is true stop other following function from exucuting
+    if (result) {
+        return;
+    }
+
     clearScreen();
     drawSnake();
     changeSnakePosition();
     checkCollision();
     drawApple();
     drawScore();
+
     setTimeout(drawGame, 1000 / speed); // update screen 7 times a second
 }
 
@@ -73,13 +82,12 @@ function drawScore() {
     ctx.fillText("Score: " + score, canvas.clientWidth - 50, 10); // position our score at right hand corner
 }
 
-
 function checkCollision() {
     // collision happens when left, right ,top, and bottom sides of apple is in contact with any part of the snake
     if (appleX == headX && appleY == headY) {
         appleX = Math.floor(Math.random() * tileCount); // generate apple to a random horizontal position
         appleY = Math.floor(Math.random() * tileCount); // generate apple to a random vertical position
-        
+
         tailLength++; // increase tail length
         score++; // increase score value
     }
@@ -88,6 +96,39 @@ function checkCollision() {
 function clearScreen() {
     ctx.fillStyle = 'black'; // make screen black
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight); // black color start from 0px left, right to canvas width and canvas height
+}
+
+// Game Over function
+function isGameOver() {
+    let gameOver = false;
+    // check whether game has started
+    if (yVelocity === 0 && xVelocity === 0) {
+        return false;
+    }
+    if (headX < 0) { // if snake hits left wall
+        gameOver = true;
+    }
+    else if (headX === tileCount) { // if snake hits right wall
+        gameOver = true;
+    }
+    else if (headY < 0) { // if snake hits wall at the top
+        gameOver = true;
+    }
+    else if (headY === tileCount) { //if snake hits wall at the bottom
+        gameOver = true;
+    }
+
+    // stop the game when snake bumps into itself
+
+    for (let i = 0; i < snakeParts.length; i++) {
+        let part = snakeParts[i];
+        if (part.x === headX && part.y === headY) { // check whether any part of snake is occupying the same space
+            gameOver = true;
+            break; // to break out of for loop
+        }
+
+        return gameOver; // this will stop the execution of the drawgame method
+    }
 }
 
 document.body.addEventListener('keydown', keyDown);
