@@ -31,24 +31,6 @@ let appleY = 5;
 // initialize score
 let score = 0;
 
-// create game loop-to continously update screen
-function drawGame() {
-    changeSnakePosition();
-    // game over logic
-    let result = isGameOver();
-    // if result is true
-    if (result) {
-        return;
-    }
-    clearScreen();
-    drawSnake();
-    drawApple();
-
-    checkCollision()
-    drawScore();
-    setTimeout(drawGame, 1000 / speed); //update screen 7 times a second
-}
-
 // Game Over function
 function isGameOver() {
     let gameOver = false;
@@ -84,13 +66,37 @@ function isGameOver() {
 
     // display Game Over Text
     if (gameOver) {
-        ctx.fillStyle = "white";
-        ctx.font = "50px verdana";
-        ctx.fillText("Game Over! ", canvas.clientWidth / 6.5, canvas.clientHeight / 2);//position our text in center
+        // ctx.fillStyle = "white";
+        // ctx.font = "50px verdana";
+        // ctx.fillText("Game Over! ", canvas.clientWidth / 6.5, canvas.clientHeight / 2); // position our text in center
+
+        // return alert('You ded!');
+        if (confirm(('You ded! Press OK to restart.'))) {
+            window.location = '/js-snake-game/';
+        }
+        // return
     }
 
     // Stop execution of drawgame method
     return gameOver;
+}
+
+// create game loop-to continously update screen
+function drawGame() {
+    changeSnakePosition();
+    // game over logic
+    let result = isGameOver();
+    // if result is true
+    if (result) {
+        return;
+    }
+    clearScreen();
+    drawSnake();
+    drawApple();
+
+    checkCollision()
+    drawScore();
+    setTimeout(drawGame, 1000 / speed); //update screen 7 times a second
 }
 
 // Implement score function
