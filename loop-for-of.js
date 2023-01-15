@@ -1,4 +1,4 @@
-const cars = ["BMW", "Volvo", "Mini", "Lamborghini"];
+// const cars = ["BMW", "Volvo", "Mini", "Lamborghini"];
 
 // for (let x of cars) {
 //     console.log(x);
