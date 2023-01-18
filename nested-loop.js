@@ -1,8 +1,12 @@
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < i; j++) {
-        console.log(j);
+function executeNestedLoop() {
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < i; j++) {
+            console.log(j);
+        }
     }
 }
+
+executeNestedLoop();
 
 // Output
 /*
