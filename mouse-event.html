@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <style>
+        .gray {
+            background-color: #f4f4f4;
+            width: 120px;
+            height: 20px;
+            padding: 40px;
+        }
+    </style>
+
+    <div class="gray" id="mouseEvent">Mouse Over Me</div>
+
+    <script>
+        const mouseEvent = document.getElementById('mouseEvent');
+
+        mouseEvent.addEventListener("mouseover", function () {
+            this.innerHTML = "Thank You";
+            console.log('thank you');
+        });
+
+        mouseEvent.addEventListener("mouseout", function () {
+            this.innerHTML = "Mouse Over Me";
+            console.log('mouse over me');
+        });
+    </script>
+
+</body>
+
+</html>

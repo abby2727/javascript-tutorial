@@ -2,6 +2,10 @@ const array = [1, 2, 2, 3, 3, 4];
 const duplicates = [];
 
 array.forEach(function (value) {
+    // console.log(array.indexOf(value));
+    // console.log(array.lastIndexOf(value));
+    // return false;
+
     if (array.indexOf(value) !== array.lastIndexOf(value)) {
         if (!duplicates.includes(value)) {
             duplicates.push(value);
