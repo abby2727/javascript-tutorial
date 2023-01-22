@@ -1,19 +1,11 @@
-// function myFunction(a, b) {
-//     return a * b;
+// function add(a, b) {
+//     return a + b;
 // }
 
-// let myFunction = (a, b) => a * b;
+// const add = (a, b) => {
+//     return a + b;
+// }
 
-// console.log(myFunction(3, 4));
+const add = (a, b) => a + b;
 
-// traditional function
-function add(a, b) {
-    return a + b;
-}
-
-// arrow function
-const add2 = (a, b) => a + b;
-
-console.log(add2(50, 10));
-
-console.log(add(2, 2));
+console.log(add(5, 5));

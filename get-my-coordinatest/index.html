@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Geolocation</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>JavaScript Geolocation</h2>
+        <button id="button">Get My Geolocation</button>
+        <p id="demo">My Latitude and Longitude</p>
+    </div>
+
+    <script>
+        const button = document.getElementById("button");
+        const txt = document.getElementById("demo");
+
+        button.addEventListener("click", getLocation);
+
+        function getLocation() {
+            try {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } catch {
+                txt.innerHTML = err;
+            }
+        }
+
+        function showPosition(position) {
+            txt.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+</body>
+
+</html>
