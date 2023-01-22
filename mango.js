@@ -10,16 +10,14 @@
 
 */
 
-// TODO
 /*
-    console.log(mango(9, 5));
-    mango(9, 5) ==> 30   # 6 mangoes for $5 per unit = $30; +3 mangoes for free
+    *mango(9, 5) ==> 30   # 6 mangoes for $5 per unit = $30; +3 mangoes for free
 
     3, 6, 9 -> 3 free
-
-    totalCost = 45
-    freeMango = 3
-    freeCost = 15
+    ? freeMango = 3 (how can we calculate the free mango?)
+    totalCost = 45 (price * quantity)
+    freeCost = 15 (price * freeMango)
 
     finalCost = 45 - 15 = 30
+    *return finalCost;
 */
