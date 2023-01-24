@@ -1,6 +1,6 @@
-const cars = ["BMW", "Volvo", "Mini", "Lamborghini"];
-console.log(cars);
-console.log(cars.join(' '));
+// const cars = ["BMW", "Volvo", "Mini", "Lamborghini"];
+// console.log(cars);
+// console.log(cars.join(' '));
 
 // for (let x of cars) console.log(x);
 
@@ -10,8 +10,8 @@ console.log(cars.join(' '));
 //     console.log(x);
 // }
 
-// const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const number = [1, 2, 3, 4, 5];
 
-// for (let num of number) {
-//     console.log(num);
-// }
+for (let num of number) {
+    console.log(num);
+}
