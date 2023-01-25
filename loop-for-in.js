@@ -13,6 +13,6 @@ const myObj = JSON.parse(myJSON);
 // return false;
 
 for (const x in myObj) {
-    // console.log(x);         // name, age, car
-    console.log(myObj[x]); // John, 30, null
+    // console.log(x);      // name, age, car
+    console.log(myObj[x]);  // John, 30, null
 }
