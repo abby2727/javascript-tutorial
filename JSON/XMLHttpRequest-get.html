@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <title>How to make an HTTP request using XMLHttpRequest</title>
+</head>
+
 <body>
 
     <div style="text-align: center;">
@@ -12,6 +16,11 @@
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "https://jsonplaceholder.typicode.com/users/3");
         xmlhttp.onload = function () {
+            // console.log(this.responseText); // return JSON string
+            // const myObj = JSON.parse(this.responseText);
+            // console.log(myObj);  // return JSON object
+            // console.log(myObj.email);
+
             const myObj = JSON.parse(this.responseText);
             document.getElementById("demo").innerHTML = myObj.email;
         }
