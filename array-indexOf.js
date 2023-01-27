@@ -1,4 +1,8 @@
 const fruits = ["Apple", "Orange", "Apple", "Mango"];
-let position = fruits.indexOf("Mango") + 1;
+const position = "Orange"
 
-console.log(position);
+if (fruits.indexOf(position) === -1) {    // return -1 if not found
+    console.log("Not found");
+} else {
+    console.log("Index: " + fruits.indexOf(position));
+}
