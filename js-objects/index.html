@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h2>Hello, world!</h2>
+
+    <script>
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            hobbies: ["reading", "travelling", "music"],
+            address: {
+                street: "123 Main St.",
+                city: "San Francisco",
+                state: "CA"
+            },
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        console.log(typeof person);
+        console.log(person);
+    </script>
+</body>
+
+</html>
