@@ -1,15 +1,24 @@
-function looping() {
-    for (let i = 1; i <= 5; i++) {
-        for (let j = 1; j < i; j++) {
-            console.log('j: ' + j);
-            // return ('j: ' + j);
+const json = `{
+    "name": "Muhammad Ishaq",
+    "gender": "Male",
+    "age": 23,
+    "address": {
+        "street": "87",
+        "city": "Gultari Matyal Skardu",
+        "state": "Gilgit Baltistan",
+        "postalCode": "16350"
+    },
+    "phoneNumber": [
+        { 
+            "type": "personal", 
+            "number": "116263747" 
         }
-    }
+    ]
+}`;
+
+const jsonDecoded = JSON.parse(json);
+
+for (const key in jsonDecoded.address) {
+    console.log(key);
+    // console.log(jsonDecoded.address[key]);
 }
-
-looping();
-
-// function square(x) {
-//     return x * x;
-// }
-// console.log(square(3)); // 9

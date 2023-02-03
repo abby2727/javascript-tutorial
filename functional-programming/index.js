@@ -1,4 +1,5 @@
-// Not functional
+// * Not functional
+
 // const greeting = "Hi I'm ";
 // const name = "Abdul";
 
