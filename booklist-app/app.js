@@ -47,8 +47,6 @@ class UI {
         if (el.classList.contains('delete')) {
             if (confirm('Are you sure you want to delete this?')) {
                 el.parentElement.parentElement.remove();
-                // let tr = el.parentElement.parentElement;
-                // document.querySelector('#book-list').removeChild(tr);
             }
         }
     }
@@ -139,7 +137,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
     UI.deleteBook(e.target);
 
     const isbn = e.target.parentElement.previousElementSibling.textContent;
-    // console.log(isbn);
     Store.removeBook(isbn);
 
     UI.showAlert('Book deleted succesfully!', 'danger');
