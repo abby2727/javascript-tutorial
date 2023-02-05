@@ -12,5 +12,11 @@ Book.prototype.getSummary = function () {
 
 // Magazine Constructor
 function Magazine(title, author, year, month) {
-    
+    Book.call(this, title, author, year);
+
+    this.month = month;
 }
+
+const mag1 = new Magazine('Mag One', 'Robert Zee', '2018', 'Feb');
+
+console.log(mag1);
