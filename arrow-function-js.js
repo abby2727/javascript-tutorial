@@ -1,11 +1,4 @@
-// function add(a, b) {
-//     return a + b;
-// }
+myFunc = (param1, param2) => param1 * param2;
+// function myFunc(param1, param2) { return param1 * param2; }
 
-// const add = (a, b) => {
-//     return a + b;
-// }
-
-const add = (a, b) => a + b;
-
-console.log(add(5, 5));
+console.log(myFunc(5, 5));
