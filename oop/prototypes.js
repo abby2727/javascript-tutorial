@@ -19,7 +19,7 @@ Book.prototype.getAge = function () {
 // Revise / Change Year
 Book.prototype.revise = function (newYear) {
     this.year = newYear;
-    // this.revised = true;
+    this.revised = true;
 }
 
 // Instantiate an Object
