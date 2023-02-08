@@ -19,6 +19,6 @@ const json = `{
 const jsonDecoded = JSON.parse(json);
 
 for (const key in jsonDecoded.address) {
-    console.log(key);
-    // console.log(jsonDecoded.address[key]);
+    // console.log(key);
+    console.log(jsonDecoded.address[key]);
 }
