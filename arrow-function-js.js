@@ -1,4 +1,12 @@
-myFunc = (param1, param2) => param1 * param2;
-// function myFunc(param1, param2) { return param1 * param2; }
+function add(a, b) {
+    return a + b;
+}
 
-console.log(myFunc(5, 5));
+console.log(add(10, 10));
+
+// 1. the name of the function
+// 2. parameters
+// 3. block of code inside the function (return) 
+add = (a, b) => a + b;
+
+console.log(add(10, 12));
