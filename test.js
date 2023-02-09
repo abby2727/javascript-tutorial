@@ -1,12 +1,3 @@
-function add(a, b) {
-    return a + b;
-}
+const arr = [1, 2, 3, 4, 5];
 
-console.log(add(10, 10));
-
-// 1. the name of the function
-// 2. parameters
-// 3. block of code inside the function (return) 
-add = (a, b) => a + b;
-
-console.log(add(10, 12));
+console.log(arr.length);
