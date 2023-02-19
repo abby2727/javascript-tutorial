@@ -1,11 +1,10 @@
-const arrName = ['Robert', 'Ann', 'Zee'];
-
-// console.log(arr.length);
-
-for (const item of arrName) {
-    console.log(item);
+let stock = {
+    one: 'orange',
+    two: 'banana',
+    three: 'apple',
+    Fruit: ['orange', 'banana', 'apple']
 }
 
-const multiply = (num1, num2) => num1 * num2;
-
-console.log(multiply(10, 6));
+stock.Fruit.forEach((value) => {
+    console.log(value);
+});
