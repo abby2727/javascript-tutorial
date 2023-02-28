@@ -1,10 +1,6 @@
-let stock = {
-    one: 'orange',
-    two: 'banana',
-    three: 'apple',
-    Fruit: ['orange', 'banana', 'apple'],
-}
+const numbers = [5, 10, 20];
 
-// stock.Fruit.forEach((value) => {
-//     console.log(value);
-// });
+let doubleArr = numbers.map(num => num);
+
+// console.log(numbers);
+console.log(doubleArr);

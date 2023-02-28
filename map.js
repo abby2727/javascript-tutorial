@@ -7,5 +7,5 @@ console.log(typeof numbers);
 
 // Arrow function
 const numbers2 = [1, 2, 3, 4];
-const doubledNumbers2 = numbers.map(number => number * 3);
-console.log(doubledNumbers2);
+const triple = numbers.map(number => number * 3);
+console.log(triple);
