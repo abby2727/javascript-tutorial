@@ -6,17 +6,10 @@ const employees = [
     { id: 19, empName: 'Robert', dept: 'IT' },
 ]
 
-// * Display employees dept
-// for (const employee in employees) {
-//     console.log(employees[employee].dept);
+const onlyITEmployees = employees.filter((val) => val.dept == 'IT');
+
+console.log(onlyITEmployees);
+
+// for (let emp in onlyITEmployees) {
+//     console.log(typeof onlyITEmployees[emp].empName);
 // }
-
-// * Display employees with the IT dept only
-// let onlyITEmployees = employees.filter(e => e.dept == 'IT');
-let onlyITEmployees = employees.filter(function (e) {
-    return e.dept == 'IT';
-});
-
-for (let emp in onlyITEmployees) {
-    console.log(onlyITEmployees[emp].empName);
-}
