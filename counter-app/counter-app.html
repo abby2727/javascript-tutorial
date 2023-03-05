@@ -14,6 +14,7 @@
         <button id="reset">Reset</button>
         <button id="increment">Increment</button>
         <p id="warning">Cannot decrement anymore.</p>
+        <p id="primary">Nothing to reset.</p>
     </div>
 
     <script>
@@ -24,6 +25,7 @@
         let reset = document.getElementById("reset");
         let decrement = document.getElementById("decrement");
         let warning = document.getElementById("warning");
+        let primary = document.getElementById("primary");
 
         increment.addEventListener("click", incrementNum);
         reset.addEventListener("click", resetNum);
@@ -33,17 +35,23 @@
             counter++;
             countDisplay.textContent = counter;
             warning.style.display = "none";
+            primary.style.display = "none";
         }
 
         function resetNum() {
-            counter = 0;
-            countDisplay.textContent = counter;
-            warning.style.display = "none";
+            if (counter > 0) {
+                counter = 0;
+                countDisplay.textContent = counter;
+                warning.style.display = "none";
+            } else {
+                primary.style.display = "block";
+                warning.style.display = "none";
+            }
         }
 
         function decrementNum() {
             counter <= 0 ? (counter = 0, countDisplay.textContent = counter,
-                warning.style.display = "block") : (counter--, countDisplay.textContent = counter);
+                warning.style.display = "block", primary.style.display = "none") : (counter--, countDisplay.textContent = counter);
         }
     </script>
 </body>

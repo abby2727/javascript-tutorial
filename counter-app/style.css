@@ -39,3 +39,8 @@ button:hover {
     color: red;
     display: none;
 }
+
+#primary {
+    color: blue;
+    display: none;
+}
