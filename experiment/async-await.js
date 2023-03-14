@@ -1,14 +1,18 @@
-const title = document.getElementById('title')
+async function myFunction() {
+    try {
+        let response = await fetch('/experiment/data.json');
+        let data = response.json();
+        console.log(data)
 
-const fetchData = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
-    const data = await res.json()
-
-    let text = ''
-    for (const key in data) {
-        text += `<p>ID: ${data[key].id}, Name: ${data[key].name}</p>`;
+        // Loop all the firstname
+        // for (const key in data) {
+        //   console.log(data[key])
+        // }
+        // return false;
+        // data.map(value => console.log(value))
+    } catch (err) {
+        console.log(err); // TypeError: failed to fetch
     }
-    title.innerHTML = text
 }
 
-fetchData();
+myFunction();

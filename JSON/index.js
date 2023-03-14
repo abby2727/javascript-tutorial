@@ -10,38 +10,23 @@ let json = {
     },
     "phoneNumber": [
         {
-            "type": "personal",
-            "number": "116263747"
+            "type": "Personal",
+            "number": "123"
+        },
+        {
+            "type": "Business",
+            "number": "456"
         }
     ]
 };
 
-// * Access all values of address
-// for (let key in json.address) {
-//     if (json.address.hasOwnProperty(key)) {
-//         console.log(key + " : " + json.address[key]);
-//     }
-// }
-
-// Object.values(json.address).forEach(function (value) {
-//     console.log(value);
+// console.log(json.phoneNumber[1].type)
+// json.phoneNumber.forEach(function (phoneNumber) {
+//     console.log("Type: " + phoneNumber.type);
+//     console.log("Number: " + phoneNumber.number);
 // });
 
-// for (let key in json.phoneNumber) {
-//     // console.log(typeof json.phoneNumber[key]);   // return object
-//     console.log(json.phoneNumber[key]);
-// }
-
-// let phoneNumbers = json.phoneNumber;
-// for (let i = 0; i < phoneNumbers.length; i++) {
-//     // console.log(typeof phoneNumbers[i]); // return object
-//     console.log("Type: " + phoneNumbers[i].type);
-//     console.log("Number: " + phoneNumbers[i].number);
-// }
-
-// * Access all values of address
-let phoneNumbers = json.phoneNumber;
-phoneNumbers.forEach(function(phoneNumber) {
-    console.log("Type: " + phoneNumber.type);
-    console.log("Number: " + phoneNumber.number);
-});
+console.log('Accessing the value of address in the json object.')
+for (const key in json.address) {
+    console.log(json.address[key])
+}

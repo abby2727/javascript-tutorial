@@ -1,13 +1,11 @@
-let text = '{"employees":[' +
+let text = 
+    '{"employees":[' +
     '{"firstName":"John","lastName":"Doe" },' +
     '{"firstName":"Anna","lastName":"Smith" },' +
     '{"firstName":"Peter","lastName":"Jones" }]}';
 
-// ? Data written as an JSON array will be parsed into a JavaScript array.
-const text2 = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+console.log(JSON.parse(text))
 
-// Convert the string into a JavaScript object
-const obj = JSON.parse(text2); 
-
-// console.log(obj);
-console.log(obj[2]);
+// const text2 = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+// const obj = JSON.parse(text2);
+// console.log(obj[2]);

@@ -4,6 +4,7 @@
 <body>
     <h2>JavaScript Objects</h2>
     <p>In JavaScript, objects are king. If you understand objects, you understand JavaScript.</p>
+    <div id="address"></div>
 
     <script>
         let person = {
@@ -21,29 +22,18 @@
             }
         };
 
-        // console.log(typeof person);
-        // console.log(person);
         // for (let x in person) {
         //     console.log(person[x]);
         // }
 
-        // * Display fullName
-        // console.log(person.address);
-        // for (let x in person.address) {
-        //     console.log(person.address[x]);
-        // }
-
-        // for (let x of person.address) {
-        //     console.log(x);
-        // }
+        let text = "";
+        for (let x in person.address) {
+            text += `${person.address[x]} <br/>`;
+        }
+        document.getElementById('address').innerHTML = `<h3>${text}</h3>`;
 
         // for (let x of person.hobbies) {
         //     console.log(x);
-        // }
-
-        // console.log(person.hobbies[1]);
-        // for (let x in person.hobbies) {
-        //     console.log(person.hobbies[x]);
         // }
     </script>
 </body>
