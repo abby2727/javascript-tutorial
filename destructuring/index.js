@@ -1,10 +1,17 @@
 const note = {
-    id: 1,
     title: 'My first note',
-    date: '01/01/1970',
+    author: {
+        firstName: 'Sherlock',
+        lastName: 'Holmes',
+    },
+    tags: ['personal', 'writing', 'investigations'],
 }
 
-console.log(typeof note)
-for (let [key, value] of Object.entries(note)) {
-    console.log(typeof `${key}: ${value}`)
-}
+const {
+    title,
+    author,
+    author: { firstName, lastName },
+    tags: [personal, writing, inv]
+} = note;
+
+console.log("I am " + writing)
