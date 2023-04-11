@@ -1,18 +1,4 @@
-const note = {
-    id: 1,
-    title: 'My first note',
-    date: '01/01/1970',
-    author: {
-        firstName: 'Sherlock',
-        lastName: 'Holmes',
-    }
-}
+const { length } = 'A string';
+const nameZ = 'A string';
 
-// const mLastName = note.author.lastName;
-const {
-    id,
-    title,
-    date,
-    author: { firstName, lastName }
-} = note;
-console.log(firstName)
+console.log(nameZ.length)
