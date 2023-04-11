@@ -9,9 +9,10 @@ const note = {
 
 const {
     title,
-    author,
-    author: { firstName, lastName },
-    tags: [personal, writing, inv]
+    date = new Date(),
+    author: { firstName },
+    tags: [personal]
 } = note;
 
-console.log("I am " + writing)
+console.log("I am " + personal)
+console.log("DATE", date)
