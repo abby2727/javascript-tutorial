@@ -1,4 +1,8 @@
-const { length } = 'A string';
-const nameZ = 'A string';
+const date = ['1970', '12', '01'];
 
-console.log(nameZ.length)
+// const year = date[0];
+// const month = date[1];
+// const day = date[2];
+
+const [year, month, day] = date;
+console.log(month)
