@@ -1,3 +1,4 @@
-const myName = "Abdul Fahad";
+const originalObject = { enabled: true, darkMode: false }
+const secondObject = { ...originalObject }
 
-console.log(myName.split(''))
+console.log(secondObject)
