@@ -1,12 +1,6 @@
-const oUsers = [
-    { id: 1, name: 'Ben' },
-    { id: 2, name: 'Leslie' },
-]
+const myName = "Abdul Fahad";
 
-const newUser = { id: 3, name: 'Ron' }
-const uUsers = [
-    ...oUsers,
-    newUser
+const nameArr = [
+    ...myName
 ]
-
-console.log(uUsers)
+console.log(nameArr)
