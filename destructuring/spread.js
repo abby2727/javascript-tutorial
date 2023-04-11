@@ -1,8 +1,12 @@
-const tools = ['hammer', 'screwdriver'];
-const otherTools = ['wrench', 'saw'];
-
-const allTools = [
-    ...tools,
-    ...otherTools,
+const oUsers = [
+    { id: 1, name: 'Ben' },
+    { id: 2, name: 'Leslie' },
 ]
-console.log(allTools)
+
+const newUser = { id: 3, name: 'Ron' }
+const uUsers = [
+    ...oUsers,
+    newUser
+]
+
+console.log(uUsers)
