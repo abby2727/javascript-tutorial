@@ -1,4 +1,8 @@
-const originalObject = { enabled: true, darkMode: false }
-const secondObject = { ...originalObject }
+const user = {
+    id: 3,
+    name: 'Ron',
+}
 
-console.log(secondObject)
+const updatedUser = { ...user, isLoggedIn: true }
+console.log(updatedUser)
+console.log("USER", user)
