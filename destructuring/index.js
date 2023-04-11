@@ -1,4 +1,10 @@
-const nestedArray = [1, 2, [3, 4], 5];
+const note = {
+    id: 1,
+    title: 'My first note',
+    date: '01/01/1970',
+}
 
-const [one, two, [three, four], five] = nestedArray;
-console.log(one, two, three, four, five)
+console.log(typeof note)
+for (let [key, value] of Object.entries(note)) {
+    console.log(typeof `${key}: ${value}`)
+}
