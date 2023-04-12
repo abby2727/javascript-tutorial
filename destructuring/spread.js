@@ -1,9 +1,4 @@
-function multiply(a, b, c) {
-    return a * b * c
-}
+const { isLoggedIn, ...rest } = { isLoggedIn: false, id: 1, name: 'Ben' }
 
-const num = [2, 2, 2];
-console.log(multiply(...num))
-
-// * without spread
-// console.log(multiply.apply(null, num))
+console.log(isLoggedIn)
+console.log(rest)
