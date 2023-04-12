@@ -1,17 +1,9 @@
-const user = {
-    id: 3,
-    name: 'Ron',
-    organization: {
-        name: 'Parks & Recreation',
-        city: 'Pawnee',
-    },
+function multiply(a, b, c) {
+    return a * b * c
 }
 
-const updatedUser = {
-    ...user,
-    organization: {
-        ...user.organization,
-        zipcode: 8401
-    }
-}
-console.log(updatedUser)
+const num = [2, 2, 2];
+console.log(multiply(...num))
+
+// * without spread
+// console.log(multiply.apply(null, num))
