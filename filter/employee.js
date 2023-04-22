@@ -8,6 +8,9 @@ const employees = [
 
 const onlyITEmployees = employees.filter((val) => val.dept == 'IT');
 
+// const result = employees.map((em) => console.log((em.name)))
+// return false;
+
 // console.log(onlyITEmployees);
 
 // for (let emp in onlyITEmployees) {

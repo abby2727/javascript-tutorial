@@ -7,7 +7,7 @@ const payload = {
 };
 
 // * Gather remaining properties into new Object
-const { currentPage, data, id, ...rest } = payload;
+const { currentPage, data, id, idx = 'abdul', ...rest } = payload;
 
-console.log(currentPage)
-console.log(rest)
+console.log(id)
+console.log(idx)
