@@ -19,23 +19,7 @@ const json = `{
 
 const jsonDecoded = JSON.parse(json);
 
-for (const key in jsonDecoded.address) {
-    console.log(jsonDecoded.address[key]);
+for (j in jsonDecoded.address) {
+    const val = jsonDecoded.address[j];
+    console.log(`${j}: ${val}`)
 }
-
-// for (const key in jsonDecoded) {
-//     let data = jsonDecoded[key];
-//     if (Array.isArray(data)) {
-//         for (let i = 0; i < data.length; i++) {
-//             console.log(typeof data[i]);
-//         }
-//     }
-// }
-
-// jsonDecoded.hobby.forEach((value) => {
-//     console.log(value);
-// });
-
-// for (let i = 0; i < jsonDecoded.hobby.length; i++) {
-//     console.log(jsonDecoded.hobby[i]);
-// }
