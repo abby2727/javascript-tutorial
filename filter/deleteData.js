@@ -31,6 +31,8 @@ const data = [
 	}
 ];
 
+// * filter method returns new array that pass a specific condition
+
 // const deleteID = 3;
 // const newData = data.filter((value) => value.id !== deleteID);
 // console.log(newData);
