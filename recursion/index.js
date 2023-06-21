@@ -50,7 +50,7 @@ const onDeleteFunction = (data) => {
 		if (selectedIDs.includes(item.id)) {
 			return false;
 		}
-		if (item.children) {
+		if (item.children && item.children.length > 0) {
 			const filteredChildren = onDeleteFunction(item.children);
 			item.children = filteredChildren.length > 0 ? filteredChildren : [];
 		}
