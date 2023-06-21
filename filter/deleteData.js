@@ -1,4 +1,4 @@
-const data = [
+const dataSource = [
 	{
 		name: 'John',
 		id: 1,
@@ -33,10 +33,27 @@ const data = [
 
 // * filter method returns new array that pass a specific condition
 
+// * Level 1
 // const deleteID = 3;
-// const newData = data.filter((value) => value.id !== deleteID);
+// const newData = dataSource.filter((value) => value.id !== deleteID);
 // console.log(newData);
 
-const deleteIDs = [1, 2, 3];
-const newData = data.filter((value) => !deleteIDs.includes(value.id));
-console.log(newData);
+// * Level 2
+// const deleteIDs = [1, 2, 3];
+// const newData = dataSource.filter((value) => !deleteIDs.includes(value.id));
+// console.log(newData);
+
+// * Level 3
+
+const deleteIDs = [1, 2, 5];
+
+function onDeleteData(data) {
+	return data.filter((item) => {
+		if (deleteIDs.includes(item.id)) {
+			return false;
+		}
+		return true;
+	});
+}
+
+console.log(onDeleteData(dataSource));
