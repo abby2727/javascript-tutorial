@@ -43,16 +43,19 @@ const dataSource = [
 	}
 ];
 
-function processDataSource(data) {
-	for (const item of data) {
-		console.log(item.code);
+const selectedIDs = [1, 4];
 
-		// Recursive case: if item has children, call the function recursively
-		if (item.children.length > 0) {
-			processDataSource(item.children);
+const onDeleteFunction = (data) => {
+	return data.filter((item) => {
+		if (selectedIDs.includes(item.id)) {
+			return false;
 		}
-	}
-}
+		if (item.children.length > 0) {
+			const filteredChildren = onDeleteFunction(item.children);
+			item.children = filteredChildren.length > 0 ? filteredChildren : [];
+		}
+		return true;
+	});
+};
 
-// Call the recursive function with the dataSource object
-processDataSource(dataSource);
+console.log(onDeleteFunction(dataSource));
