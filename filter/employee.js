@@ -6,6 +6,8 @@ const employees = [
 	{ id: 20, name: 'Robert', dept: 'IT' }
 ];
 
-const onlyITEmployees = employees.filter((val) => val.dept === 'IT');
+const onlyITEmployees = employees.filter((val) => {
+	return val.dept === 'IT';
+});
 
 console.log(onlyITEmployees);
