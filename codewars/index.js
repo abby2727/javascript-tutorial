@@ -1,16 +1,11 @@
-function longest(s1, s2) {
-	const concatStr = s1.concat(s2);
-	const strArr = concatStr.split('');
-	let newArr = [];
+const n = 1;
 
-	for (s in strArr) {
-		const char = strArr[s];
-		if (!newArr.includes(char)) {
-			newArr.push(char);
-		}
-	}
+const start = (n * (n - 1)) + 1;
+const end = ((n - 1) * 2) + start;
 
-	return newArr.sort().join('');
+let oddSum = 0;
+for (let i = start; i <= end; i+=2) {
+	oddSum += i;
 }
 
-console.log(longest('abc', 'cefda')); // abcdef
+console.log(oddSum);
