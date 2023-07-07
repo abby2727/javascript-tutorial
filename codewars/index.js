@@ -1,11 +1,10 @@
-const n = 1;
+const arr = [2,2,1,2,1];
+const min = Math.min(...arr);
+const indexMin = arr.indexOf(min);
 
-const start = (n * (n - 1)) + 1;
-const end = ((n - 1) * 2) + start;
+const newArr = arr.slice(0, indexMin);
+const newArr2 = arr.slice(indexMin + 1, arr.length);
+const newArr3 = newArr.concat(newArr2);
 
-let oddSum = 0;
-for (let i = start; i <= end; i+=2) {
-	oddSum += i;
-}
-
-console.log(oddSum);
+console.log(newArr);
+console.log(newArr2);
