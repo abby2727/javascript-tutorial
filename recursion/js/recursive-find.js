@@ -59,18 +59,19 @@ const dataSource = [
 	}
 ];
 
-// findSectionSubsectionByKeys
-function findObjectById(objectArray, targetId) {
-	for (let i = 0; i < objectArray.length; i++) {
-		if (objectArray[i].id === targetId) {
-			return objectArray[i];
+function findSectionSubsectionByKeys(dataSource, targetKey) {
+	const dataSourceLength = dataSource.length;
+
+	for (let i = 0; i < dataSourceLength; i++) {
+		if (dataSource[i].key === targetKey) {
+			return dataSource[i];
 		} else if (
-			objectArray[i].children &&
-			objectArray[i].children.length > 0
+			dataSource[i].children &&
+			dataSource[i].children.length > 0
 		) {
-			const nestedResult = findObjectById(
-				objectArray[i].children,
-				targetId
+			const nestedResult = findSectionSubsectionByKeys(
+				dataSource[i].children,
+				targetKey
 			);
 			if (nestedResult) {
 				return nestedResult;
@@ -81,29 +82,24 @@ function findObjectById(objectArray, targetId) {
 	return null;
 }
 
-// getChildrenKeys
-function getAllKeys(activeObject, excludeKey) {
+function getChildrenKeys(activeObject, excludeKey) {
 	let keys = [];
 
 	if (activeObject.children && activeObject.children.length > 0) {
 		activeObject.children.forEach((item) => {
-			keys = keys.concat(getAllKeys(item, excludeKey));
+			keys = keys.concat(getChildrenKeys(item, excludeKey));
 		});
 	}
 
 	if (activeObject.key !== excludeKey) {
-		keys.push(activeObject.key); // Include the key after traversing children
+		keys.push(activeObject.key);
 	}
 
 	return keys;
 }
 
-const selectedID = 2;
-const activeObject = findObjectById(dataSource, selectedID);
+const selectedKey = 3;
+const parentObject = findSectionSubsectionByKeys(dataSource, selectedKey);
 
-if (activeObject) {
-	const childKeys = getAllKeys(activeObject, selectedID);
-	console.log(childKeys);
-} else {
-	console.log('Object with selectedID not found.');
-}
+const childKeys = getChildrenKeys(parentObject, selectedKey);
+console.log(childKeys);

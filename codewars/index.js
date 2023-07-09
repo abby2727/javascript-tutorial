@@ -1,10 +1,11 @@
-const arr = [2,2,1,2,1];
-const min = Math.min(...arr);
-const indexMin = arr.indexOf(min);
+function isTriangle(a,b,c) 
+{
+	// let isTriangle = false;
+	if (a + b > c && a + c > b && b + c > a) {
+		return true;
+	}
+	
+	return false;
+}
 
-const newArr = arr.slice(0, indexMin);
-const newArr2 = arr.slice(indexMin + 1, arr.length);
-const newArr3 = newArr.concat(newArr2);
-
-console.log(newArr);
-console.log(newArr2);
+console.log(isTriangle(1, 2, 3));
