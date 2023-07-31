@@ -48,8 +48,8 @@ const news = [
 
 const newsTranslations = [
 	{
-		title: 'News Update',
-		subTitle: 'Latest News',
+		title: 'ENGLISH News Update',
+		subTitle: 'ENGLISH Latest News',
 		language: 'english',
 		news: [
 			{
@@ -108,38 +108,26 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 		(item) => item.language === language
 	);
 
-	// return selectedLanguageNews;
+	// return selectedLanguageNews; // * this is from NEWS TRANSLATIONS
 
-	const newData = {
-		title: selectedLanguageNews.title,
-		subTitle: selectedLanguageNews.subTitle
-	};
+	if (selectedLanguageNews) {
+		const translatedNewsItem = selectedLanguageNews.news.find((item) =>
+			news.some((n) => n.id === item.id)
+		);
 
-	// return newData.title;
-	// return newData;
+		// return translatedNewsItem; // * this is from NEWS
 
-	// if (selectedLanguageNews) {
-	const translatedNewsItem = selectedLanguageNews.news.find((item) =>
-		news.some((n) => n.id === item.id)
-	);
-
-	// return translatedNewsItem.title;
-	// return translatedNewsItem; // * this is NEWS
-
-	// if (translatedNewsItem) {
-	// 	translatedNewsItem.title = newData.title;
-	// 	translatedNewsItem.subTitle = newData.subTitle;
-	// }
-
-	// return translatedNewsItem;
-
-	if (translatedNewsItem) {
-		news.forEach((item) => {
-			if (item.id === translatedNewsItem.id) {
-				item.title = selectedLanguageNews.title;
-				item.subTitle = selectedLanguageNews.subTitle;
-			}
-		});
+		if (translatedNewsItem) {
+			news.forEach((item) => {
+				if (item.id === translatedNewsItem.id) {
+					item.title = selectedLanguageNews.title;
+					item.subTitle = selectedLanguageNews.subTitle;
+				} else {
+					item.title = '';
+					item.subTitle = '';
+				}
+			});
+		}
 	}
 
 	return news;
