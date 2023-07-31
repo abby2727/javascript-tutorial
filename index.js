@@ -122,31 +122,25 @@ const newsTranslations = [
 ];
 
 function replaceTitleAndSubTitle(news, newsTranslations, language) {
-	const selectedLanguageNews = newsTranslations.find(
+	const selectedLanguageNews = newsTranslations.filter(
 		(item) => item.language === language
 	);
 
-	return selectedLanguageNews; // * this is from NEWS TRANSLATIONS
+	selectedLanguageNews.forEach((languageNews) => {
+		languageNews.news.forEach((translatedNewsItem) => {
+			const newsItemToUpdate = news.find(
+				(item) => item.id === translatedNewsItem.id
+			);
 
-	if (selectedLanguageNews) {
-		const translatedNewsItem = selectedLanguageNews.news.find((item) =>
-			news.some((n) => n.id === item.id)
-		);
-
-		// return translatedNewsItem; // * this is from NEWS
-
-		if (translatedNewsItem) {
-			news.forEach((item) => {
-				if (item.id === translatedNewsItem.id) {
-					item.title = selectedLanguageNews.title;
-					item.subTitle = selectedLanguageNews.subTitle;
-				} else {
-					item.title = '';
-					item.subTitle = '';
-				}
-			});
-		}
-	}
+			if (newsItemToUpdate) {
+				newsItemToUpdate.title = languageNews.title;
+				newsItemToUpdate.subTitle = languageNews.subTitle;
+			} else {
+				newsItemToUpdate.title = '';
+				newsItemToUpdate.subTitle = '';
+			}
+		});
+	});
 
 	return news;
 }
