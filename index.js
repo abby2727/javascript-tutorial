@@ -100,6 +100,24 @@ const newsTranslations = [
 			}
 		],
 		id: 3
+	},
+	{
+		title: 'get Filipino Update',
+		subTitle: 'get Filipino Latest News',
+		language: 'filipino',
+		news: [
+			{
+				title: 'World Health Organization Announces New Global Health Initiative',
+				subTitle: 'test3',
+				id: 3,
+				author: 'Sarah Johnson',
+				date: '2023-08-01',
+				content:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				category: 'Health'
+			}
+		],
+		id: 4
 	}
 ];
 
@@ -108,7 +126,7 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 		(item) => item.language === language
 	);
 
-	// return selectedLanguageNews; // * this is from NEWS TRANSLATIONS
+	return selectedLanguageNews; // * this is from NEWS TRANSLATIONS
 
 	if (selectedLanguageNews) {
 		const translatedNewsItem = selectedLanguageNews.news.find((item) =>
