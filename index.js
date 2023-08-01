@@ -144,21 +144,21 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 		(item) => item.language === language
 	);
 
-	const translatedIds = selectedLanguageNews.flatMap((item) =>
+	const translatedNewsIds = selectedLanguageNews.flatMap((item) =>
 		item.news.map((newsItem) => newsItem.id)
 	);
 
 	news.forEach((item) => {
-		if (!translatedIds.includes(item.id)) {
+		if (!translatedNewsIds.includes(item.id)) {
 			item.title = '';
 			item.subTitle = '';
 		}
 	});
 
 	selectedLanguageNews.forEach((newsTranslationsData) => {
-		newsTranslationsData.news.forEach((translatedNewsItem) => {
+		newsTranslationsData.news.forEach((newsTranslatedItem) => {
 			const newsData = news.find(
-				(item) => item.id === translatedNewsItem.id
+				(item) => item.id === newsTranslatedItem.id
 			);
 
 			if (newsData) {
@@ -171,7 +171,7 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 	return news;
 }
 
-const language = 'english';
+const language = 'filipino';
 const updatedNews = replaceTitleAndSubTitle(news, newsTranslations, language);
 
 console.log(updatedNews);
