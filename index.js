@@ -126,19 +126,31 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 		(item) => item.language === language
 	);
 
-	selectedLanguageNews.forEach((languageNews) => {
-		languageNews.news.forEach((translatedNewsItem) => {
-			const newsItemToUpdate = news.find(
+	const translatedIds = selectedLanguageNews.flatMap((item) =>
+		item.news.map((newsItem) => newsItem.id)
+	);
+
+	news.forEach((item) => {
+		if (!translatedIds.includes(item.id)) {
+			// console.log('hello');
+			// console.log(item);
+			item.title = '';
+			item.subTitle = '';
+		}
+		console.log(item);
+	});
+
+	selectedLanguageNews.forEach((newsTranslationsData) => {
+		newsTranslationsData.news.forEach((translatedNewsItem) => {
+			const newsData = news.find(
 				(item) => item.id === translatedNewsItem.id
 			);
 
-			if (newsItemToUpdate) {
-				newsItemToUpdate.title = languageNews.title;
-				newsItemToUpdate.subTitle = languageNews.subTitle;
-			} else {
-				newsItemToUpdate.title = '';
-				newsItemToUpdate.subTitle = '';
-			}
+			console.log({ newsData });
+			console.log({ newsTranslationsData });
+
+			newsData.title = newsTranslationsData.title;
+			newsData.subTitle = newsTranslationsData.subTitle;
 		});
 	});
 
