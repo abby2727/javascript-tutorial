@@ -118,6 +118,24 @@ const newsTranslations = [
 			}
 		],
 		id: 4
+	},
+	{
+		title: 'Filipino Again',
+		subTitle: 'Filipino Again',
+		language: 'filipino',
+		news: [
+			{
+				title: 'New Research Reveals the Impact of Climate Change on Wildlife',
+				subTitle: 'test5',
+				id: 5,
+				author: 'Emily Brown',
+				date: '2023-08-03',
+				content:
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				category: 'Environment'
+			}
+		],
+		id: 4
 	}
 ];
 
@@ -132,12 +150,9 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 
 	news.forEach((item) => {
 		if (!translatedIds.includes(item.id)) {
-			// console.log('hello');
-			// console.log(item);
 			item.title = '';
 			item.subTitle = '';
 		}
-		console.log(item);
 	});
 
 	selectedLanguageNews.forEach((newsTranslationsData) => {
@@ -146,18 +161,17 @@ function replaceTitleAndSubTitle(news, newsTranslations, language) {
 				(item) => item.id === translatedNewsItem.id
 			);
 
-			console.log({ newsData });
-			console.log({ newsTranslationsData });
-
-			newsData.title = newsTranslationsData.title;
-			newsData.subTitle = newsTranslationsData.subTitle;
+			if (newsData) {
+				newsData.title = newsTranslationsData.title;
+				newsData.subTitle = newsTranslationsData.subTitle;
+			}
 		});
 	});
 
 	return news;
 }
 
-const language = 'filipino';
+const language = 'english';
 const updatedNews = replaceTitleAndSubTitle(news, newsTranslations, language);
 
 console.log(updatedNews);
