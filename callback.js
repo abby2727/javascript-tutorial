@@ -1,10 +1,22 @@
-let one = (callback) => {
-    console.log('I am one!');
-    callback('two!');
+function process(callback) {
+	setTimeout(function () {
+		console.log('Step One');
+
+		setTimeout(function () {
+			console.log('Step Two');
+
+			setTimeout(function () {
+				console.log('Step Three');
+
+				setTimeout(function () {
+					console.log('All steps completed');
+					callback();
+				}, 1000);
+			}, 1000);
+		}, 1000);
+	}, 1000);
 }
 
-let two = (text) => {
-    console.log('I am ' + text);
-}
-
-one(two);
+process(function () {
+	console.log('Callback hell completed');
+});
