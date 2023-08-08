@@ -1,5 +1,4 @@
-// Traversy Media
-// async/await - more elegant way to handle Promises.
+// * async/await - more elegant way to handle Promises.
 
 const posts = [
 	{
@@ -13,16 +12,16 @@ const posts = [
 ];
 
 function getPosts() {
-	let output = document.getElementById('output');
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			let text = '';
+			posts.forEach((post, index) => {
+				text += `<li>${post.body}</li>`;
+			});
 
-	setTimeout(() => {
-		let text = '';
-		posts.forEach((post, index) => {
-			text += `<li>${post.body}</li>`;
-		});
-
-		output.innerHTML = text;
-	}, 1000);
+			resolve(text);
+		}, 1000);
+	});
 }
 
 function createPost(post) {
@@ -38,12 +37,18 @@ function createPost(post) {
 }
 
 async function init() {
-	await createPost({
-		title: 'Post Three',
-		body: 'This is post three'
-	});
+	try {
+		await createPost({
+			title: 'Post Three',
+			body: 'This is post three'
+		});
 
-	getPosts();
+		const postsHtml = await getPosts();
+		const output = document.getElementById('output');
+		output.innerHTML = postsHtml;
+	} catch (error) {
+		console.error(error);
+	}
 }
 
 init();
