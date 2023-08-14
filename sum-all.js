@@ -1,16 +1,7 @@
-function sumAll() {
-    const array = [5, 10, 15, 30];
-    let sum = 0;
+const numbers = [2, 3, 5, 7];
+let sum = 0;
 
-    // for (let i = 0; i < array.length; i++) {
-    //     sum += array[i];
-    // }
+// numbers.forEach((n) => (sum += n));
+numbers.map((n) => (sum += n));
 
-    array.forEach(function (value) {
-        sum += value;  // value == array[i]
-    });
-    
-    console.log(sum);
-}
-
-sumAll();
+console.log(sum);
