@@ -8,5 +8,5 @@ const payload = {
 
 const { currentPage, data, id, newID = 'abdul', ...rest } = payload;
 
-console.log(data);
-// console.log(rest);
+// console.log(data);
+console.log(rest);
