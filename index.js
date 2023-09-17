@@ -1,1 +1,6 @@
-console.log('Hello Earth');
+const car = {
+	make: 'Toyota',
+	model: 'Camry'
+};
+
+console.log(Object.values(car));
