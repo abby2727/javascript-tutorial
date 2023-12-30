@@ -33,11 +33,15 @@ const products = [
 	}
 ];
 
-const languageTag = 'nl-nl';
-const filteredProducts = products.filter((product) => {
-	return !product.trProductTranslated
-		.map((lang) => lang.toLowerCase())
-		.includes(languageTag.toLowerCase());
-});
+const iAmFunction = (products) => {
+	return products.map((p) => {
+		return {
+			...p,
+			trProductTranslated: p.trProductTranslated.map((l) =>
+				l.toLowerCase()
+			)
+		};
+	});
+};
 
-console.log(filteredProducts);
+console.log(iAmFunction(products));
